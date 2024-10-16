@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_icon_svgrepo_com"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_scan"
+        android:icon="@drawable/qr_code_svgrepo_com"
+        android:title="Scan" />
+
+    <item
+        android:id="@+id/nav_info"
+        android:icon="@drawable/baseline_info_outline_24"
+        android:title="Info" />
+
+</menu>

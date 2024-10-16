@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student ID:"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:layout_marginTop="200dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course and Year:"
+        android:layout_marginTop="250dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Department:"
+        android:layout_marginTop="300dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:id="@+id/idText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="010101"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="150dp"
+        />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:layout_marginTop="200dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="150dp"
+        />
+
+    <TextView
+        android:id="@+id/courseYrText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BSIT 3"
+        android:layout_marginTop="250dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="190dp"
+        />
+
+    <TextView
+        android:id="@+id/departmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CCIS"
+        android:layout_marginTop="300dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginStart="160dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginStart="50dp"
+        />
+
+    <!-- Container for Fragments -->
+
+    <!-- Bottom Navigation View -->
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginBottom="-40dp" >
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="-38dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="-40dp"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+
+</RelativeLayout>
