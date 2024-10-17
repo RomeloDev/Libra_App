@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LogsViewActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student Logs"
+        android:textStyle="bold"
+        android:textSize="29dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <TableLayout
+            android:id="@+id/logsTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <!-- Header Row -->
+            <TableRow>
+                <TextView android:text="Student ID" android:padding="8dp" android:textStyle="bold"/>
+                <TextView android:text="Name" android:paddingTop="8dp"
+                    android:paddingBottom="8dp" android:paddingLeft="40dp"
+                    android:paddingRight="40dp" android:textStyle="bold"/>
+                <TextView android:text="Course and Year" android:padding="8dp" android:textStyle="bold"/>
+                <TextView android:text="Department" android:padding="8dp" android:textStyle="bold"/>
+                <TextView android:text="Date" android:padding="8dp" android:textStyle="bold"/>
+                <TextView android:text="Time" android:padding="8dp" android:textStyle="bold"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+    </HorizontalScrollView>
+
+</LinearLayout>

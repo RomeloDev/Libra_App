@@ -187,7 +187,7 @@ public class HomePage extends AppCompatActivity {
 
             if (qrValue.equals("Valid_QR")) {
                 submitLogToFirebase();  // Submit log if QR is valid
-                Intent intent = new Intent(HomePage.this, Logs.class);  //usba ni e redirect sa lain layout
+                Intent intent = new Intent(HomePage.this, LogsViewActivity.class);
                 startActivity(intent);
                 finish();  // Close current activity
             } else {
@@ -201,13 +201,12 @@ public class HomePage extends AppCompatActivity {
     // Method to submit the log to Firebase
     private void submitLogToFirebase() {
         DatabaseReference logsRef = FirebaseDatabase.getInstance().getReference("logs");
-        String logID = logsRef.push().getKey();
 
         // Create a log entry with user ID and timestamp
-        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault()).format(new Date());
         LogEntry logEntry = new LogEntry(studentID, timestamp);
 
-        logsRef.child(logID).setValue(logEntry)
+        logsRef.child(studentID).setValue(logEntry)
                 .addOnSuccessListener(aVoid -> Toast.makeText(this, "Log submitted successfully", Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to submit log: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }

@@ -1,20 +1,20 @@
 package com.example.libraapp;
 
 public class LogEntry {
-    private String userId;
+    private String logID;
     private String timestamp;
 
     public LogEntry(){
 
     }
 
-    public LogEntry(String userId, String timestamp){
-        this.userId = userId;
+    public LogEntry(String logID, String timestamp){
+        this.logID = logID;
         this.timestamp = timestamp;
     }
 
-    public String getUserId(){
-        return userId;
+    public String getLogID(){
+        return logID;
     }
 
     public String getTimestamp(){
