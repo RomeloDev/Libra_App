@@ -44,6 +44,7 @@
                 <TextView android:text="Department" android:padding="8dp" android:textStyle="bold"/>
                 <TextView android:text="Date" android:padding="8dp" android:textStyle="bold"/>
                 <TextView android:text="Time" android:padding="8dp" android:textStyle="bold"/>
+                <TextView android:text="Purpose" android:padding="8dp" android:textStyle="bold"/>
             </TableRow>
 
         </TableLayout>

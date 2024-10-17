@@ -46,7 +46,6 @@ public class HomePage extends AppCompatActivity {
 
     private Spinner purpose;
     private TextView idView, nameView, courseYrView, departmentView;
-    private DatabaseReference studentsRef;
     private String selectedPurpose, studentID;
     private List<String> purposeOption;
 
@@ -159,6 +158,10 @@ public class HomePage extends AppCompatActivity {
                             Toast.makeText(HomePage.this, "Home Selected", Toast.LENGTH_SHORT).show();
                             return true;
                         } else if (item.getItemId() == R.id.nav_scan) {
+                            if (selectedPurpose.equals("Purpose of Visit:")){
+                                Toast.makeText(HomePage.this, "Please Select purpose of visit", Toast.LENGTH_SHORT).show();
+                                return false;
+                            }
                             initiateQRScan();  // Launch QR scanner
                             return true;
                         } else if (item.getItemId() == R.id.nav_info) {
@@ -204,7 +207,7 @@ public class HomePage extends AppCompatActivity {
 
         // Create a log entry with user ID and timestamp
         String timestamp = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault()).format(new Date());
-        LogEntry logEntry = new LogEntry(studentID, timestamp);
+        LogEntry logEntry = new LogEntry(studentID, timestamp, selectedPurpose);
 
         logsRef.child(studentID).setValue(logEntry)
                 .addOnSuccessListener(aVoid -> Toast.makeText(this, "Log submitted successfully", Toast.LENGTH_SHORT).show())
