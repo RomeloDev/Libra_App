@@ -39,11 +39,6 @@ import java.util.Locale;
 
 public class HomePage extends AppCompatActivity {
 
-
-    HomeFragment homeFragment = new HomeFragment();
-    ScanFragment scanFragment = new ScanFragment();
-    InfoFragment infoFragment = new InfoFragment();
-
     private Spinner purpose;
     private TextView idView, nameView, courseYrView, departmentView;
     private String selectedPurpose, studentID;
@@ -61,26 +56,6 @@ public class HomePage extends AppCompatActivity {
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = null;
-
-                if (item.getItemId() == R.id.nav_home) {
-                    selectedFragment = new HomeFragment();
-                } else if (item.getItemId() == R.id.nav_scan) {
-                    selectedFragment = new ScanFragment();
-                } else if (item.getItemId() == R.id.nav_info) {
-                    selectedFragment = new InfoFragment();
-                }
-
-                if (selectedFragment != null) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, selectedFragment).commit();
-                }
-
-                return true;
-            }
-        });
 
         // Set default fragment
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
